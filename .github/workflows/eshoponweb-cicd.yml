@@ -16,7 +16,6 @@ jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
     runs-on: ubuntu-latest
-    name: aaa
     steps:
     #checkout the repository
     - uses: actions/checkout@v2
@@ -50,7 +49,6 @@ jobs:
   # Use Bicep to deploy infrastructure + Publish webapp 
   deploy:
     runs-on: ubuntu-latest
-    name: bbb
     needs: buildandtest
     environment:
       name: 'Development'

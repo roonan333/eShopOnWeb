@@ -15,9 +15,9 @@ env:
 jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
-  name: aaa
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    name: aaa
+    steps:
     #checkout the repository
     - uses: actions/checkout@v2
     #prepare runner for desired .net version SDK
@@ -49,8 +49,8 @@ jobs:
         
   # Use Bicep to deploy infrastructure + Publish webapp 
   deploy:
-    name: bbb
     runs-on: ubuntu-latest
+    name: bbb
     needs: buildandtest
     environment:
       name: 'Development'
